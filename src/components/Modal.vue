@@ -1,11 +1,29 @@
 <template>
-    <div class="backdrop">
+    <div class="backdrop" @click="closeModal">
         <div class="modal">
-            <h1>Hey World :)</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, atque totam iusto reiciendis tempora aspernatur debitis. Ipsum natus velit asperiores molestias.</p>
+            <h1>{{header}}</h1>
+            <p>{{text}}</p>
+            <!-- <a href="">{{btn}}</a> -->
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    props: ['header', 'text', 'btn'],
+    data(){
+        return {
+        showModal: false
+        }
+    },
+    methods: {
+        closeModal(){
+            //this.showModal = !this.showModal
+            this.$emit('close')
+        }
+    }
+}
+</script>
 
 <style>
 .backdrop {
