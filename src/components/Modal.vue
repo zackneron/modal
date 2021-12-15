@@ -1,9 +1,8 @@
 <template>
-    <div class="backdrop" @click="closeModal">
+    <div class="backdrop" @click.self="closeModal">
         <div class="modal">
             <h1>{{header}}</h1>
             <p>{{text}}</p>
-            <!-- <a href="">{{btn}}</a> -->
         </div>
     </div>
 </template>
@@ -18,7 +17,6 @@ export default {
     },
     methods: {
         closeModal(){
-            //this.showModal = !this.showModal
             this.$emit('close')
         }
     }
