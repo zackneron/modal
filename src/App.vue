@@ -1,9 +1,11 @@
 <template>
 <div>
-  <h1 @click="toogleModal">{{ title }}</h1>
+  <h1>{{ title }}</h1>
+  <p>Welcome...</p>
   <div v-show="showModal">
     <Modal header="Hello Neron" text="I am your new FED" @close="toogleModal" />
   </div>
+  <button @click="toogleModal">Show Modal</button>
 </div>
 </template> 
 
